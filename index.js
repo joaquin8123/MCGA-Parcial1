@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const express = require('express')
 
 /* Routes Import */
+const productRoutes = require('./src/routes/products');
 
 const app = express();
 
@@ -33,6 +34,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 /* Routes */
+app.use('/product', productRoutes);
 
 /* Error handling */
 app.use((req, res, next) => {
